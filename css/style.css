@@ -1,67 +1,162 @@
-:root{/*Codigo inicializador marca algo por defecto*/
- --oscuro: #212121;
+:root {
+    /*Codigo inicializador marca algo por defecto*/
+    --oscuro: #212121;
+    --primario: #83f0cc;
+    /*FF1107*/
+    --secundario: #1aaacc;
 }
 
 html {
     box-sizing: border-box;
-    min-height: 100%; 
-    font-size: 62.5%; /*para utilizar REM como medida de la fuente*/
-  }
-*, *:before, *:after {
+    min-height: 100%;
+    font-size: 62.5%;
+    /*para utilizar REM como medida de la fuente*/
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    /*Quito el margin de todos los H*/
+}
+
+
 /*Se pone min-height en body y html para que se estire el degradado a toda la pagina
 al igual que background-attachment: fixed*/
-body{
-    font-family: 'Raleway', sans-serif ;/*Importamos la fuente del aip Fonts*/
+
+body {
+    font-family: 'Raleway', sans-serif;
+    /*Importamos la fuente del aip Fonts*/
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     min-height: 100%;
     font-size: 1.6rem;
 }
 
+
 /*Todo el header y su ancho en pantalla*/
-.site-header{
-background-color: gainsboro;
+
+.site-header {
+    background-color: gainsboro;
 }
 
 
 /*Barra Navegador*/
-.site-header nav{
-max-width: 1200px;
-margin: 0 auto;
-padding: 2rem 0;
 
-display: flex;
-
-flex-direction: column;/*Por defecto es ROW, hace que se pongan uno debajo del otro
+.site-header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    /*Por defecto es ROW, hace que se pongan uno debajo del otro
                         si utilizamos esto, vamos a necesitar la prop aling-items para alinear los objetos*/
-align-items: center;
-
-
+    align-items: center;
 }
 
-@media (min-width: 768px ){
+@media (min-width: 768px) {
     /*display: flex se hereda del padre*/
-    .site-header nav{
-    flex-direction: row;
-    justify-content: space-between; /*Distribuidos a lo largo del ancho de la pantalla*/
+    .site-header nav {
+        flex-direction: row;
+        justify-content: space-between;
+        /*Distribuidos a lo largo del ancho de la pantalla*/
     }
 }
 
-.site-header nav a{
+.site-header nav a {
     text-decoration: none;
-    color: var(--oscuro); /*aqui se utiliza el root*/
+    color: var(--oscuro);
+    /*aqui se utiliza el root*/
     font-size: 2.2rem;
-    margin-bottom: 2rem; /*separar los enlaces entre ellos*/
-    
+    margin-bottom: 2rem;
+    /*separar los enlaces entre ellos*/
 }
 
-.site-header nav a:last-of-type{/*Para quitar el margin del ultimo enlace*/
+.site-header nav a:last-of-type {
+    /*Para quitar el margin del ultimo enlace*/
     margin-bottom: 0;
 }
 
-@media (min-width: 768px){
-    .site-header nav a{
-    margin-bottom: 0;
+@media (min-width: 768px) {
+    .site-header nav a {
+        margin-bottom: 0;
     }
+}
+
+
+/*---------------HERO--------------*/
+
+
+/*Imagen principal --Padre de la clase hero:after-*/
+
+.hero {
+    height: 45rem;
+    background-image: url(../img/hero.jpg);
+    position: relative;
+    display: flex;
+    /*por defecto tiene el flex-direction: row;*/
+    justify-content: center;
+    /*centra el contenido de clase Hija*/
+    align-items: center;
+}
+
+.hero::after {
+    /*Simpre que se usa "after" se pone "content"... en este caso va vacio 
+    xq usa un color de fondo*/
+    content: '';
+    background-color: rgba(0, 0, 0, .7);
+    /*Se usa "rgba" para colores transparentes*/
+    position: absolute;
+    /*si tiene "absolute" el padre tiene que tener "relative"*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /*Para que ocupe todo el espacio del contenedor Padre*/
+    right: 0;
+}
+
+.contenedor-hero {
+    color: white;
+    text-align: center;
+    /*Al tener un color oscuro en el background el texto en este caso 
+    queda por "debajo" por lo que es necesario hacer lo siguiente para 
+    dejarlo por encima*/
+    position: relative;
+    z-index: 1;
+    /*Cualquier n° mayor a 0*/
+}
+
+
+/*icono ubicacion*/
+
+.contenedor-hero i {
+    color: var(--primario);
+    font-size: 5rem;
+}
+
+
+/*----Boton----*/
+
+.boton {
+    background-color: var(--secundario);
+    text-decoration: none;
+    padding: 1rem 5rem;
+    /*es necesario primero definir inline-block*/
+    display: inline-block;
+    margin-top: 4rem;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 550;
+    font-size: 2rem;
+    border-radius: 0.7rem;
+}
+
+.boton:hover {
+    background-color: #0099cc;
+    transition-delay: 0.1s;
 }

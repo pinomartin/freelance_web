@@ -3,3 +3,10 @@ display: flex *---*---*--*CONCEPTOS GENERALES
 Si quiero utilizar Flexbox le tengo que aplicar el estilo de Flex al padre contenedor de los elementos que quiero que tomen esa propiedad. 
 Por ejemplo si tengo una barra nav (padre) y muchos enlaces <a> a los que quiero modificar, a flexbox se lo aplico a <nav> o al contenedor de éste 
 que podría ser un <header>
+
+
+**FLEXBOX***
+-Se aplica a la clase padre de las hijas que están siendo contenidas dentro de él. 
+- Por defecto tenemos el Flex-direction: row, por lo que necesitaremos justify-content para alinear horizontalmente y el aling-items para 
+alinear verticalmente. Ahora si usamos flex-direction: column, ambos selectores invierten su funcionalidad, 
+((justify-content vertical && align-items horizontal))
