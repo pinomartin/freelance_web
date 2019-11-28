@@ -245,14 +245,14 @@ form {
     background-color: var(--formcolor);
     padding: 2rem;
     border-radius: 1rem;
-    margin: 3rem;
+    margin-top: 3rem;
 }
 
 form legend {
     color: var(--primario);
     font-size: 2.5rem;
     margin: 3rem 0;
-    
+    display: block;
     text-align: center;
 }
 
@@ -280,7 +280,7 @@ form legend {
 }
 
 .campo label {
-    flex: 0 0 50px;
+    flex: 0 0 90px;
     padding: 0.5rem;
 }
 
