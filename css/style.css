@@ -222,6 +222,10 @@ body {
     align-items: center;
 }
 
+.servicio p {
+    text-align: justify;
+}
+
 .iconos {
     width: 10rem;
     /*Tamaño del circulo*/
