@@ -10,3 +10,10 @@ que podría ser un <header>
 - Por defecto tenemos el Flex-direction: row, por lo que necesitaremos justify-content para alinear horizontalmente y el aling-items para 
 alinear verticalmente. Ahora si usamos flex-direction: column, ambos selectores invierten su funcionalidad, 
 ((justify-content vertical && align-items horizontal))
+
+**Funcion Flex --- 
+Se suele utilizar en la clase hija para darle la distribucion del espacio del flexbox a los elementos que formen parte.
+
+flex: 0 0 calc(33.33% - 1rem);
+        /*flex funciona de la misma manera que un margin: 0 auto
+        el primer valor si pusiera un 1 me ocupa cada elemento la totalidad de su porcion*/
