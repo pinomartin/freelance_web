@@ -280,7 +280,7 @@ form legend {
 }
 
 .campo label {
-    flex: 0 0 90px;
+    flex: 0 0 50px;
     padding: 0.5rem;
 }
 
