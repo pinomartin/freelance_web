@@ -309,3 +309,16 @@ form legend {
     display: flex;
     justify-content: flex-end;
 }
+
+
+/*--------FOOTER----------*/
+
+.contenedor-footer {
+    background-color: gainsboro;
+}
+
+.contenedor-footer nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
