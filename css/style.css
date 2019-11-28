@@ -252,7 +252,7 @@ form legend {
     color: var(--primario);
     font-size: 2.5rem;
     margin: 3rem 0;
-    display: block;
+    
     text-align: center;
 }
 
@@ -289,6 +289,7 @@ form legend {
     /*Se pone 1 para que ocupe todo el espacio de su contenedor, 
     en este caso el que reste luego de consumir 90px*/
     height: 4rem;
+    width: 100%;
 }
 
 .campo textarea {
