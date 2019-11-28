@@ -4,6 +4,7 @@
     --primario: #83f0cc;
     /*FF1107*/
     --secundario: #1aaacc;
+    --anchoPantalla: 1200px;
 }
 
 html {
@@ -24,6 +25,22 @@ h2,
 h3 {
     margin: 0;
     /*Quito el margin de todos los H*/
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+h3 {
+    color: var(--secundario);
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.7rem;
+    line-height: 2rem;
 }
 
 
@@ -154,9 +171,67 @@ body {
     font-weight: 550;
     font-size: 2rem;
     border-radius: 0.7rem;
+    transition: background-color .2s ease-in-out;
 }
 
 .boton:hover {
     background-color: #0099cc;
-    transition-delay: 0.1s;
+}
+
+.contenedor {
+    max-width: var(--anchoPantalla);
+    margin: 0 auto;
+    /*margin para centrar contenido*/
+    background-color: gainsboro;
+    padding: 3rem;
+    border-radius: 1rem;
+    /*Borde sombreado*/
+    -webkit-box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 13px -8px rgba(0, 0, 0, 0.75);
+}
+
+.servicios {
+    margin: 3rem auto;
+}
+
+
+/*CLASE PADRE de Seccion Servicios*/
+
+.contenedor-servicios {
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor-servicios {
+        display: flex;
+        justify-content: space-between;
+    }
+    .servicio {
+        flex: 0 0 calc(33.33% - 1rem);
+        /*flex funciona de la misma manera que un margin: 0 auto
+        el primer valor si pusiera un 1 me ocupa cada elemento la totalidad de su porcion*/
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconos {
+    width: 10rem;
+    /*Tamaño del circulo*/
+    height: 10rem;
+    border-radius: 50%;
+    background-color: var(--primario);
+    display: flex;
+    /*Para que deje una separacion entre iconos*/
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3rem;
+    /*Se podria usar esto para centrar circulo en el medio 
+    margin: 0 auto; */
+    font-size: 3rem;
 }
